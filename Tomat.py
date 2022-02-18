@@ -98,5 +98,4 @@ tabs_window.add(work_tab, text="Szychta")
 tabs_window.add(short_break_tab, text="Dechnij Se")
 tabs_window.add(long_break_tab, text="Fajrant")
 
-root.wm_attributes('-transparent', False)
 root.mainloop()
