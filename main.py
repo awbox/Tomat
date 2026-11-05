@@ -5,7 +5,7 @@ from tkinter.ttk import Notebook
 from PIL import ImageTk
 
 # --------------------------- project imports ---------------------------
-from TabObject import TabObject
+from src.TabObject import TabObject
 
 # --------------------------- constants ---------------------------
 WORK_IMAGE = "Tomat_images/1.jpg"

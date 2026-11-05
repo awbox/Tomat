@@ -7,8 +7,9 @@ It opens a window on your machine, which contains 3 tabs: work tab, short break 
 You may start tracking your time with start button on the left, and stop any time with stop button on the right.  
 
 ## Pre-requisites
-- Python 3.8
+- Python 3.9+
 - virtualenv
+- uv
 
 ## How to use
 To start using Tomat on your machine, follow these instructions:
@@ -23,9 +24,9 @@ To start using Tomat on your machine, follow these instructions:
   ```  
 3. Install requirements:  
   ```
-  pip3 install requirements.txt
+  uv sync
   ```  
 4. Execute main module to start the app:  
   ```
-  python3 main.py
+  uv run main.py
   ```  

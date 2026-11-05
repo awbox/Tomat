@@ -1,6 +1,6 @@
 from tkinter import Button, Canvas
 
-import time_utils
+from src import time_utils
 
 
 class TabObject:
