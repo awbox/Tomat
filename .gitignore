@@ -2,6 +2,7 @@
 __pycache__
 .DS_Store
 .venv/*
+src/tomat.egg-info/*
 tomat.egg-info/*
 build/*
 .ruff_cache/*
