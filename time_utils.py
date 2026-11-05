@@ -14,7 +14,7 @@ def time_display_format(time_seconds: int) -> str:
     :param time_seconds: time in seconds
     :return: string, time in format "mm:ss"
     """
-    return f"{time_seconds//60:02d}:{time_seconds%60:02d}"
+    return f"{time_seconds // 60:02d}:{time_seconds % 60:02d}"
 
 
 def count_down(time_seconds: int):

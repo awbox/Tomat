@@ -1,6 +1,7 @@
 # --------------------------- standard lib imports ---------------------------
 from tkinter import Tk
 from tkinter.ttk import Notebook
+
 from PIL import ImageTk
 
 # --------------------------- project imports ---------------------------
@@ -19,7 +20,7 @@ LONG_BREAK_MIN = 20
 # ----------------- Initalizing root window and Notebook widget -----------
 root = Tk()
 root.geometry("300x300")
-root.title('Tomat')
+root.title("Tomat")
 
 tabs_window = Notebook(root, width=300, height=300)
 tabs_window.pack()

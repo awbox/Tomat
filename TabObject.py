@@ -1,5 +1,6 @@
+from tkinter import Button, Canvas
+
 import time_utils
-from tkinter import Canvas, Button
 
 
 class TabObject:
@@ -30,15 +31,22 @@ class TabObject:
         Create timer display in widget center.
         :return: None
         """
-        self.timer_text = self.background.create_text(150, 150, text=time_utils.time_display_format(self.duration_sec),
-                                                      fill='black', font=("Courier", 55, "bold"))
+        self.timer_text = self.background.create_text(
+            150,
+            150,
+            text=time_utils.time_display_format(self.duration_sec),
+            fill="black",
+            font=("Courier", 55, "bold"),
+        )
 
     def create_buttons(self) -> None:
         """
         Create start and stop buttons to control timer.
         :return: None
         """
-        self.start_button = Button(self.background, text="start", command=self.start_timer)
+        self.start_button = Button(
+            self.background, text="start", command=self.start_timer
+        )
         self.background.create_window(10, 10, anchor="nw", window=self.start_button)
 
         self.stop_button = Button(self.background, text="stop", command=self.stop_timer)
@@ -79,8 +87,3 @@ class TabObject:
         :return: None
         """
         self.background.itemconfig(self.timer_text, text=current_time)
-
-
-
-
-
