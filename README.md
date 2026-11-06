@@ -8,25 +8,25 @@ You may start tracking your time with start button on the left, and stop any tim
 
 ## Pre-requisites
 - Python 3.9+
-- virtualenv
 - uv
 
 ## How to use
 To start using Tomat on your machine, follow these instructions:
-1. Create and activate virtual environment:
-  ```
-    virtualenv -p your/path/to/python3 venv
-    source venv/bin/activate
-  ```  
-2. Check out the repository:  
+
+1. Check out the repository:  
   ```
   git clone https://github.com/awbox/Tomat
   ```  
-3. Install requirements:  
+2. Create and activate virtual environment:
   ```
   uv sync
+  source .venv/bin/activate
+  ```  
+3. Install requirements:  
+  ```
+  uv pip install -e .
   ```  
 4. Execute main module to start the app:  
   ```
-  uv run main.py
+  python -m main
   ```  
