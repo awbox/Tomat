@@ -1,9 +1,24 @@
 from tkinter import Button, Canvas
 
-from src import time_utils
+import time_utils
 
 
-class TabObject:
+class TimerInterface:
+    """
+    Holding class for timer functionality
+    """
+    timer_running = False
+
+    def start_timer(self) -> None:
+        self.timer_running = True
+
+    def stop_timer(self) -> None:
+        self.timer_running = False
+
+
+
+
+class TabObject(TimerInterface):
     def __init__(self, name, root, duration, background_image):
         """
         Tab widget, containing image background, start/stop buttons, and count down timer display.
@@ -22,7 +37,6 @@ class TabObject:
         self.background.pack(fill="both", expand=True)
         self.background.create_image(0, 0, image=background_image, anchor="nw")
 
-        self.timer_running = False
         self.create_timer_text()
         self.create_buttons()
 
@@ -52,21 +66,6 @@ class TabObject:
         self.stop_button = Button(self.background, text="stop", command=self.stop_timer)
         self.background.create_window(200, 10, anchor="nw", window=self.stop_button)
 
-    def start_timer(self) -> None:
-        """
-        Start timer. Used as a callback in self.start_button.
-        :return: None
-        """
-        self.timer_running = True
-        self.timer()
-
-    def stop_timer(self) -> None:
-        """
-        Stop timer. Used as a callback in self.stop_button.
-        :return: None
-        """
-        self.timer_running = False
-
     def timer(self) -> None:
         """
         Display count down on widget, keep current time refreshed every second.
@@ -79,7 +78,11 @@ class TabObject:
             if not self.timer_running:
                 self.current_time = current_time
                 break
-
+    
+    def start_timer(self) -> None:
+        self.timer_running = True
+        self.timer()
+    
     def update_time(self, current_time: str) -> None:
         """
         Update the self.timer_text widget with current time.
@@ -87,3 +90,4 @@ class TabObject:
         :return: None
         """
         self.background.itemconfig(self.timer_text, text=current_time)
+
